@@ -16,6 +16,7 @@
     <a-scene embedded arjs="sourceType: webcam;" gesture-detector>
       <!-- Câmera controlada pelo AR.js -->
       <a-entity
+        camera
         cameracursor="rayOrigin: mouse; fuse:false"
         raycaster="objects: .tocavel"
       ></a-entity>
@@ -27,15 +28,15 @@
           gltf-model="url(woody_woodpecker.glb)"
           scale="2.5 2.5 2.5"
           position="0 0 0"
-          animation__grow="property: scale; to: 3 3 3; dur:120; startEvents: mousedown; startEvents: touchstart; autoreset: true"
-          animation__shrink="property: scale; to: 2.5 2.5 2.5; dur:120; startEvents: mouseup; startEvents: touchend; autoreset: true"
-          animation__pulse="property: scale; to: 3.5 3.5 3.5; dur:120; dir: alternate; loop: 2; startEvents: gesture-tap; autoreset: true"
+          animation__grow="property: scale; to: 3 3 3; dur: 120; startEvents: mousedown, touchstart; autoreset: true"
+          animation__shrink="property: scale; to: 2.5 2.5 2.5; dur: 120; startEvents: mouseup, touchend; autoreset: true"
+          animation__pulse="property: scale; to: 3.5 3.5 3.5; dur: 120; dir: alternate; loop: 2; startEvents: gesture-tap; autoreset: true"
           gesture-handler
         ></a-entity>
         <!-- Luz ambiente suave -->
         <a-light type="ambient" color="#BBB"></a-light>
         <!-- Luz direcional para realçar o modelo -->
-        <a-light type="directional" intensity="0.8" position="-8 4 0"></a-light>
+        <a-light type="directional" intensity="0.8" position="2 4 2"></a-light>
       </a-marker>
     </a-scene>
   </body>
